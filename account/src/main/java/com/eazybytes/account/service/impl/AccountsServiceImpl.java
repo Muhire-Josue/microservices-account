@@ -34,6 +34,11 @@ public class AccountsServiceImpl implements IAccountsService {
         accountRepository.save(createNewAccount(savedCustomer));
     }
 
+    @Override
+    public CustomerDto fetchAccount(String mobileNumber) {
+        return null;
+    }
+
     private Accounts createNewAccount(Customer customer) {
         Accounts newAccount = new Accounts();
         newAccount.setCustomerId(customer.getCustomerId());
