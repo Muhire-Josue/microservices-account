@@ -5,6 +5,7 @@ import com.eazybytes.account.dto.CustomerDto;
 import com.eazybytes.account.entity.Accounts;
 import com.eazybytes.account.entity.Customer;
 import com.eazybytes.account.exception.CustomerAlreadyExistsException;
+import com.eazybytes.account.exception.ResourceNotFoundException;
 import com.eazybytes.account.mapper.CustomerMapper;
 import com.eazybytes.account.repository.AccountRepository;
 import com.eazybytes.account.repository.CustomerRepository;
@@ -36,7 +37,8 @@ public class AccountsServiceImpl implements IAccountsService {
 
     @Override
     public CustomerDto fetchAccount(String mobileNumber) {
-        return null;
+        Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(() -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber));
+        return CustomerMapper.mapToCustomerDto(customer, new CustomerDto());
     }
 
     private Accounts createNewAccount(Customer customer) {
