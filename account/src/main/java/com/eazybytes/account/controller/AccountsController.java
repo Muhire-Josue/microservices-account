@@ -2,9 +2,12 @@ package com.eazybytes.account.controller;
 
 import com.eazybytes.account.constant.AccountsConstants;
 import com.eazybytes.account.dto.CustomerDto;
+import com.eazybytes.account.dto.ErrorResponseDto;
 import com.eazybytes.account.dto.ResponseDto;
 import com.eazybytes.account.service.IAccountsService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -35,6 +38,11 @@ public class AccountsController {
             responseCode = "201",
             description = "HTTP Status Created"
     )
+    @ApiResponse(
+            responseCode = "500",
+            description = "HTTP Status Internal Server Error",
+            content = @Content(schema = @Schema(implementation = ErrorResponseDto.class))
+    )
     @PostMapping("/create")
     public ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto body){
         iAccountsService.createAccount(body);
@@ -50,6 +58,11 @@ public class AccountsController {
     @ApiResponse(
             responseCode = "200",
             description = "HTTP Status OK"
+    )
+    @ApiResponse(
+            responseCode = "500",
+            description = "HTTP Status Internal Server Error",
+            content = @Content(schema = @Schema(implementation = ErrorResponseDto.class))
     )
     @GetMapping("/fetch")
     public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam
@@ -68,6 +81,11 @@ public class AccountsController {
     @ApiResponse(
             responseCode = "200",
             description = "HTTP Status OK"
+    )
+    @ApiResponse(
+            responseCode = "500",
+            description = "HTTP Status Internal Server Error",
+            content = @Content(schema = @Schema(implementation = ErrorResponseDto.class))
     )
     @PutMapping("/update")
     public ResponseEntity<ResponseDto> updateAccountDetails(@Valid @RequestBody CustomerDto customerDto) {
@@ -90,6 +108,11 @@ public class AccountsController {
     @ApiResponse(
             responseCode = "200",
             description = "HTTP Status OK"
+    )
+    @ApiResponse(
+            responseCode = "500",
+            description = "HTTP Status Internal Server Error",
+            content = @Content(schema = @Schema(implementation = ErrorResponseDto.class))
     )
     @DeleteMapping("/delete")
     public ResponseEntity<ResponseDto> deleteAccountDetails(@RequestParam
