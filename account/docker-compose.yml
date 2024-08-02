@@ -1,0 +1,30 @@
+services:
+  accounts:
+    image: josue1994/accounts:01
+    container_name: accounts-ms
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
+  cards:
+    image: josue1994/cards:v1
+    container_name: accounts-ms
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
+  loans:
+    image: josue1994/loans:v1
+    container_name: accounts-ms
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
