@@ -13,7 +13,7 @@ services:
 
   cards:
     image: josue1994/cards:v1
-    container_name: accounts-ms
+    container_name: cards-ms
     ports:
       - "9000:9000"
     deploy:
@@ -25,7 +25,7 @@ services:
 
   loans:
     image: josue1994/loans:v1
-    container_name: accounts-ms
+    container_name: loans-ms
     ports:
       - "8090:8090"
     deploy:
