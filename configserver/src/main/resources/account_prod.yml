@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related PROD APIs "
+  contactDetails:
+    name: "Sara Doe - PO"
+    email: "sara@eazybank.com"
+  onCallSupport:
+    - (456) 555-1234
+    - (456) 523-1345
