@@ -8,7 +8,7 @@ build:
 accounts:
   message: "Welcome to EazyBank accounts related PROD APIs "
   contactDetails:
-    name: "Sara Doe - PO"
+    name: "Jane Doe - PO"
     email: "{cipher}865e29b5f1e57b0994e8e1e46c8d8b3a1232d32c448d7b0c0d5132188d92683d763c4f3a9465c54702669e63e4112e3d"
   onCallSupport:
     - (456) 555-1234
