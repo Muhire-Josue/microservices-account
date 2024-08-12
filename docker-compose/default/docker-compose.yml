@@ -11,8 +11,9 @@ services:
       timeout: 5s
       retries: 10
       start_period: 5s
-    networks:
-      - eazybank
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
 
   configserver:
     image: josue1994/configserver:02
