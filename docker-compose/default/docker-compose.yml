@@ -10,8 +10,6 @@ services:
           memory: 700m
     networks:
       - eazybank
-    environment:
-      SPRING_CONFIG_IMPORT: "configserver:http://localhost:8071/"
 
   accounts:
     image: josue1994/accounts:02
@@ -24,6 +22,10 @@ services:
           memory: 700m
     networks:
       - eazybank
+    environment:
+      SPRING_APPLICATION_NAME: "accounts"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      SPRING_PROFILES_ACTIVE: default
 
   cards:
     image: josue1994/cards:v2
@@ -36,6 +38,10 @@ services:
           memory: 700m
     networks:
       - eazybank
+    environment:
+      SPRING_APPLICATION_NAME: "cards"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      SPRING_PROFILES_ACTIVE: default
 
   loans:
     image: josue1994/loans:v2
@@ -48,6 +54,10 @@ services:
           memory: 700m
     networks:
       - eazybank
+    environment:
+      SPRING_APPLICATION_NAME: "loans"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      SPRING_PROFILES_ACTIVE: default
 networks:
   eazybank:
     driver: "bridge"
