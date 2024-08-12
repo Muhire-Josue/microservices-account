@@ -29,12 +29,9 @@ services:
       timeout: 5s
       retries: 10
       start_period: 10s
-    deploy:
-      resources:
-        limits:
-          memory: 700m
-    networks:
-      - eazybank
+    extends:
+      file: common-config.yml
+      service: mic
 
   accounts:
     image: josue1994/accounts:02
