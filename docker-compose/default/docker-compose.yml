@@ -31,7 +31,7 @@ services:
       start_period: 10s
     extends:
       file: common-config.yml
-      service: mic
+      service: microservice-base-config
 
   accounts:
     image: josue1994/accounts:02
