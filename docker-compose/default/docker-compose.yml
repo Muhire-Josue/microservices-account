@@ -11,12 +11,17 @@ services:
       timeout: 5s
       retries: 10
       start_period: 5s
+    networks:
+      - eazybank
 
   configserver:
     image: josue1994/configserver:02
     container_name: configserver-ms
     ports:
       - "8071:8071"
+    depends_on:
+      rabbit:
+        condition: service_healthy
     healthcheck:
       test: "curl --fail --silent localhost:8071/actuator/health/readiness | grep Up || exit 1"
       interval: 10s
