@@ -82,6 +82,21 @@
 
 	<build>
 		<plugins>
+			<!-- Spring Boot Maven Plugin to create an executable "fat" JAR -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Jib Maven Plugin for building Docker images -->
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
@@ -90,6 +105,20 @@
 					<to>
 						<image>josue1994/${project.artifactId}:v2</image>
 					</to>
+				</configuration>
+			</plugin>
+
+			<!-- Maven Jar Plugin to include the Main-Class attribute in the manifest -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.eazybytes.accounts.AccountsApplication</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
