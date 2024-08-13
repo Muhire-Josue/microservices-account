@@ -1,4 +1,4 @@
-FROM openjdk:21-jdk-slim
+FROM openjdk:17-slim
 
 MAINTAINER github.com/Muhire-Josue
 
