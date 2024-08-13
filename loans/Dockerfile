@@ -1,4 +1,7 @@
-FROM ubuntu:latest
-LABEL authors="muhirejosue"
+FROM openjdk:21-jdk-slim
 
-ENTRYPOINT ["top", "-b"]
+MAINTAINER github.com/Muhire-Josue
+
+COPY target/loans-0.0.1-SNAPSHOT.jar loans-0.0.1-SNAPSHOT.jar
+
+ENTRYPOINT ["java", "-jar", "loans-0.0.1-SNAPSHOT.jar"]
