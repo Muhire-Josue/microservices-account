@@ -90,7 +90,7 @@
 				<version>3.4.2</version>
 				<configuration>
 					<to>
-						<image>eazybytes/${project.artifactId}:s6</image>
+						<image>josue1994/${project.artifactId}:02</image>
 					</to>
 				</configuration>
 			</plugin>
