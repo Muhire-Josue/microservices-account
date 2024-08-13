@@ -116,7 +116,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.eazybytes.accounts.AccountsApplication</mainClass>
+							<mainClass>com.eazybytes.loans.LoansApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
