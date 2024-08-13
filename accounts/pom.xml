@@ -84,6 +84,7 @@
 	</dependencyManagement>
 	<build>
 		<plugins>
+			<!-- Jib Maven Plugin for building Docker images -->
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
@@ -92,6 +93,20 @@
 					<to>
 						<image>josue1994/${project.artifactId}:02</image>
 					</to>
+				</configuration>
+			</plugin>
+
+			<!-- Maven Jar Plugin to include the Main-Class attribute in the manifest -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+<!--				<version>3.2.0</version>-->
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.eazybytes.accounts.AccountsApplication</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
