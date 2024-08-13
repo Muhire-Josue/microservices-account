@@ -84,6 +84,20 @@
 	</dependencyManagement>
 	<build>
 		<plugins>
+			<!-- Spring Boot Maven Plugin to create an executable "fat" JAR -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<!-- Jib Maven Plugin for building Docker images -->
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
@@ -100,7 +114,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-<!--				<version>3.2.0</version>-->
+				<version>3.2.0</version>
 				<configuration>
 					<archive>
 						<manifest>
