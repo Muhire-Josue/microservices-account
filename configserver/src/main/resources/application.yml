@@ -13,7 +13,7 @@ spring:
         git:
           uri: "https://github.com/Muhire-Josue/spring-confg-server.git"
           default-label: main
-          timeout: 5
+          timeout: 10
           clone-on-start: true
           force-pull: true
   rabbitmq:
