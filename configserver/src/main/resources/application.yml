@@ -11,9 +11,9 @@ spring:
           # search-locations: "classpath:/config"
           # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
-          uri: "https://github.com/Muhire-Josue/spring-confg-server.git"
+          uri: "https://github.com/eazybytes/eazybytes-config.git"
           default-label: main
-          timeout: 10
+          timeout: 5
           clone-on-start: true
           force-pull: true
   rabbitmq:
@@ -21,6 +21,7 @@ spring:
     port: 5672
     username: "guest"
     password: "guest"
+
 management:
   endpoints:
     web:
