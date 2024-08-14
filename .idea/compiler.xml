@@ -23,7 +23,7 @@
       <module name="account" options="-parameters" />
       <module name="accounts" options="-parameters" />
       <module name="cards" options="-parameters" />
-      <module name="configserver" options="" />
+      <module name="configserver" options="-parameters" />
       <module name="configserver (1) (com.eazybytes)" options="-parameters" />
       <module name="loans" options="-parameters" />
     </option>
