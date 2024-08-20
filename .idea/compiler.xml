@@ -11,11 +11,11 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="account" target="17" />
-      <module name="accounts" target="17" />
-      <module name="cards" target="17" />
-      <module name="configserver" target="17" />
+      <module name="accounts" target="21" />
+      <module name="cards" target="21" />
+      <module name="configserver" target="21" />
       <module name="configserver (1) (com.eazybytes)" target="17" />
-      <module name="loans" target="17" />
+      <module name="loans" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
