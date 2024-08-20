@@ -15,7 +15,7 @@
 	<name>accounts</name>
 	<description>Microservice for Accounts</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>21</java.version>
 		<spring-cloud.version>2023.0.3</spring-cloud.version>
 	</properties>
 	<dependencies>
@@ -46,8 +46,8 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -64,11 +64,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 
@@ -92,7 +87,7 @@
 				<version>3.4.2</version>
 				<configuration>
 					<to>
-						<image>eazybytes/${project.artifactId}:s6</image>
+						<image>eazybytes/${project.artifactId}:s7</image>
 					</to>
 				</configuration>
 			</plugin>
