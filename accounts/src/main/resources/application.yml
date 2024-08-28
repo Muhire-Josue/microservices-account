@@ -24,6 +24,8 @@ spring:
     openfeign:
       circuitbreaker:
         enabled: true
+    function:
+      definition: updateCommunication
     stream:
       bindings:
         sendCommunication-out-0:
