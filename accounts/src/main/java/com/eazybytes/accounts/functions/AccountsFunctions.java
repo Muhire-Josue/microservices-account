@@ -16,7 +16,7 @@ public class AccountsFunctions {
     public Consumer<Long> updateCommunication(IAccountsService accountsService) {
         return accountNumber -> {
             log.info("Updating Communication status for the account number : " + accountNumber.toString());
-//            accountsService.updateCommunicationStatus(accountNumber);
+            accountsService.updateCommunicationStatus(accountNumber);
         };
     }
 }
